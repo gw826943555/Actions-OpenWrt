@@ -33,9 +33,8 @@ jobs:
 
     - name: Clone source code
       run: |
-        git clone https://github.com/gw826943555/openwrt openwrt
+        git clone -b openwrt-19.07 https://github.com/gw826943555/openwrt openwrt
         cd openwrt
-        git checkout openwrt-19.07
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
