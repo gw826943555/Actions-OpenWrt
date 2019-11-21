@@ -33,30 +33,41 @@ jobs:
 
     - name: Clone source code
       run: |
-        git clone https://github.com/coolsnowwolf/lede openwrt
+        git clone https://github.com/gw826943555/openwrt openwrt
         cd openwrt
+        git checkout openwrt-19.07
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Load Custom Configuration
-      run: |
-        ln -sf packages openwrt/package/diy-packages
-        ln -sf files openwrt/files
-        chmod +x diy.sh
-        ./diy.sh
-        [ -e ".config" ] && cp .config openwrt
-        cd openwrt
-        make defconfig
-
-    - name: Download package
+    name: Download package
       run: |
         cd openwrt && make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+#    - name: Load Custom Configuration
+#      run: |
+#        ln -sf packages openwrt/package/diy-packages
+#        ln -sf files openwrt/files
+#        chmod +x diy.sh
+#        ./diy.sh
+#        [ -e ".config.r619ac" ] && cp .config openwrt
+#        cd openwrt
+#        make defconfig
+
     - name: Build
       run: |
+        [ -e ".config.r619ac" ] && cp .config.r619ac openwrt/.config
         cd openwrt
+        make defconfig
+        echo -e "$(nproc) thread build."
+        make -j$(nproc) V=s
+
+        cd ..
+
+        [ -e ".config.cm520" ] && cp .config.cm520 openwrt/.config
+        cd openwrt
+        make defconfig
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
