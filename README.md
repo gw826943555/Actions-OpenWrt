@@ -10,7 +10,7 @@ Build OpenWrt using GitHub Actions
 
 - Sign up for [GitHub Actions](https://github.com/features/actions/signup)
 - Fork [this GitHub repository](https://github.com/P3TERX/Actions-OpenWrt)
-- Generate `.config` files using [OpenWrt](https://github.com/gw82693555/openwrt) source code.
+- Generate `.config` files using [OpenWrt](https://github.com/gw826943555/openwrt) source code.
 - Push `.config` file to the GitHub repository, and the build starts automatically.Progress can be viewed on the Actions page.
 - When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
 
