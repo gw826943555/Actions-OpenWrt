@@ -60,7 +60,6 @@ jobs:
         cd openwrt
         make defconfig
         echo -e "$(nproc) thread build."
-#        make -j$(nproc) V=s
         make V=s
 
         cd ..
@@ -69,7 +68,6 @@ jobs:
         cd openwrt
         make defconfig
         echo -e "$(nproc) thread build."
-#        make -j$(nproc) V=s
         make V=s
 
     - name : Upload artifact
