@@ -34,7 +34,7 @@ jobs:
     - name: Clone source code
       run: |
         git clone -b master https://github.com/gw826943555/openwrt openwrt
-        cd openwrt
+        cd openwrt/
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
@@ -44,12 +44,14 @@ jobs:
 
     - name: Download package source code
       run: |
+        cd openwrt
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Build
       run: |
+        cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
