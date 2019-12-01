@@ -13,8 +13,8 @@ on:
   push:
     branches: 
       - master
-#  schedule:
-#    - cron: 0 8 * * 5
+  schedule:
+    - cron: * * * 1 *
   watch:
     types: [started]
 
@@ -38,37 +38,20 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-#    - name: Download package
-#      run: |
-#        cd openwrt && make download -j8
-#        find dl -size -1024c -exec ls -l {} \;
-#        find dl -size -1024c -exec rm -f {} \;
+    - name: Custom config file
+      run: |
+        bash ./mkconfig.sh
 
-#    - name: Load Custom Configuration
-#      run: |
-#        ln -sf packages openwrt/package/diy-packages
-#        ln -sf files openwrt/files
-#        chmod +x diy.sh
-#        ./diy.sh
-#        [ -e ".config.r619ac" ] && cp .config openwrt
-#        cd openwrt
-#        make defconfig
+    - name: Download package source code
+      run: |
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
 
     - name: Build
       run: |
-        [ -e ".config.r619ac" ] && cp .config.r619ac openwrt/.config
-        cd openwrt
-        make defconfig
         echo -e "$(nproc) thread build."
-        make V=s -j
-
-        cd ..
-
-        [ -e ".config.cm520" ] && cp .config.cm520 openwrt/.config
-        cd openwrt
-        make defconfig
-        echo -e "$(nproc) thread build."
-        make V=s -j
+        make -j$(nproc) V=s
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
