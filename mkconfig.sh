@@ -4,10 +4,12 @@ cd ./openwrt
 rm -f .config*
 touch .config
 
+device=$1
+echo "${device}" >> .config
+
 cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_generic=y
-CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
 EOF
 
 cat >> .config <<EOF

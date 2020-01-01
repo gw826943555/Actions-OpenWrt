@@ -49,8 +49,16 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build
+    - name: Build CM520
       run: |
+        bash ./mkconfig.sh CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
+        cd openwrt
+        echo -e "$(nproc) thread build."
+        make -j$(nproc) V=s
+
+    - name: Build R619AC
+      run: |
+        bash ./mkconfig.sh CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
