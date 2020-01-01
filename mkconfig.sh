@@ -35,6 +35,7 @@ CONFIG_LUCI_LANG_zh-cn=y
 
 CONFIG_PACKAGE_luci-app-adblock=y
 CONFIG_PACKAGE_luci-app-aria2=y
+CONFIG_PACKAGE_luci-app-commands=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_luci-app-ttyd=y
@@ -53,7 +54,7 @@ CONFIG_ARIA2_WEBSOCKET=y
 CONFIG_PACKAGE_wget=y
 
 CONFIG_PACKAGE_wpad-basic=n
-CONFIG_PACKAGE_wpad=y
+CONFIG_PACKAGE_wpad-openssl=y
 EOF
 
 make defconfig
