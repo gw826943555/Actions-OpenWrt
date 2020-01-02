@@ -35,7 +35,7 @@ jobs:
       run: |
         git clone -b master https://github.com/gw826943555/openwrt openwrt
         cd openwrt/
-        git clone https://github.com/Lienol/openwrt-package ./package/
+        git clone https://github.com/Lienol/openwrt-package ./package/lienol
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
