@@ -13,10 +13,6 @@ CONFIG_TARGET_ipq40xx_generic=y
 EOF
 
 cat >> .config <<EOF
-CONFIG_SDK=y
-EOF
-
-cat >> .config <<EOF
 CONFIG_PACKAGE_block-mount=y
 
 CONFIG_PACKAGE_kmod-fs-vfat=y
