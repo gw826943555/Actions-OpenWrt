@@ -35,12 +35,13 @@ jobs:
       run: |
         git clone -b master https://github.com/gw826943555/openwrt openwrt
         cd openwrt/
-        git clone https://github.com/Lienol/openwrt-package ./package/lienol
+        git clone https://github.com/gw826943555/openwrt-packages-misc ./package/misc
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
     - name: Custom config file
       run: |
+        bash ./custom.sh
         bash ./mkconfig.sh
 
     - name: Download package source code
@@ -52,14 +53,14 @@ jobs:
 
     - name: Build CM520
       run: |
-        bash ./mkconfig.sh CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
+        bash ./mkconfig.sh cm520
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
     - name: Build R619AC
       run: |
-        bash ./mkconfig.sh CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
+        bash ./mkconfig.sh
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
