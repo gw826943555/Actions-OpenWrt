@@ -41,6 +41,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
 CONFIG_V2RAY_COMPRESS_UPX=n
+CONFIG_PACKAGE_luci-app-transmission=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 CONFIG_PACKAGE_luci-app-upnp=y
@@ -65,6 +66,9 @@ CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_bind-dig=y
+CONFIG_PACKAGE_transmission-cli-openssl=y
+CONFIG_PACKAGE_transmission-daemon-openssl=y
+CONFIG_PACKAGE_transmission-web=y
 EOF
 
 make defconfig
