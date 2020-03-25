@@ -66,9 +66,8 @@ CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_bind-dig=y
-CONFIG_PACKAGE_transmission-cli-openssl=y
 CONFIG_PACKAGE_transmission-daemon-openssl=y
-CONFIG_PACKAGE_transmission-web=y
+CONFIG_PACKAGE_transmission-web-control=y
 EOF
 
 make defconfig
