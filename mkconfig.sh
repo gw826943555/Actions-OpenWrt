@@ -50,6 +50,7 @@ CONFIG_PACKAGE_luci-app-vsftpd=y
 CONFIG_PACKAGE_luci-app-wifischedule=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_luci-theme-material=y
+CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 CONFIG_PACKAGE_aria2=y
 CONFIG_ARIA2_NOXML=y
 CONFIG_ARIA2_BITTORRENT=y
