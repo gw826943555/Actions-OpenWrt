@@ -39,7 +39,7 @@ jobs:
         git clone -b master https://github.com/gw826943555/openwrt openwrt
         cd openwrt/
 
-	sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/ho
+        sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/ho
         ln -s /mnt/openwrt/bin ./bin
         mkdir -p ./build_dir/host && ln -s /mnt/openwrt/build_dir/host ./build_dir/host
         mkdir -p ./build_dir/host && ln -s /mnt/openwrt/build_dir/hostpkg ./build_dir/hostpkg
