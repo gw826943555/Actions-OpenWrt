@@ -58,6 +58,8 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        df -lh
+        du -h --max-depth=1
 
     - name: Build CM520
       run: |
@@ -65,6 +67,8 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
+        df -lh
+        du -h --max-depth=1
 
     - name: Build R619AC
       run: |
@@ -72,6 +76,8 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
+        df -lh
+        du -h --max-depth=1
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
