@@ -61,6 +61,23 @@ jobs:
         df -lh
         du -h --max-depth=1
 
+    - name: Post Build
+      run: |
+        cd openwrt
+        rm -f .config
+        touch .config
+        cat >> .config <<EOF
+        CONFIG_TARGET_ipq40xx=y
+        CONFIG_TARGET_ipq40xx_generic=y
+        EOF
+        make defconfig
+        make -j$(nproc) V=s
+        df -lh
+        du -h --max-depth=1
+        rm -rf ./build_dir/toolchain-*
+        df -lh
+        du -h --max-depth=1
+
     - name: Build CM520
       run: |
         bash ./mkconfig.sh cm520
