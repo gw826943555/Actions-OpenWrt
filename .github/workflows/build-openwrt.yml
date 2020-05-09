@@ -36,6 +36,7 @@ jobs:
         df -h
     - name: Clone source code
       run: |
+        sudo chmod 777 /mnt
         cd /mnt
         git clone -b master https://github.com/gw826943555/openwrt openwrt
         cd /mnt/openwrt
