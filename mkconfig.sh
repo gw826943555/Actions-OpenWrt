@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./openwrt
+cd /mnt/openwrt
 rm -f .config*
 touch .config
 

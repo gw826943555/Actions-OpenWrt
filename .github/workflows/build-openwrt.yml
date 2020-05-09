@@ -36,12 +36,12 @@ jobs:
         df -h
     - name: Clone source code
       run: |
+        cd /mnt
         git clone -b master https://github.com/gw826943555/openwrt openwrt
-        cd openwrt/
+        cd /mnt/openwrt
 
-        sudo mkdir -p -m 777 /mnt/openwrt/dl /mnt/openwrt/staging_dir 
-        ln -s /mnt/openwrt/dl ./dl
-        ln -s /mnt/openwrt/staging_dir ./staging_dir
+        sudo mkdir -p -m 777 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
+        ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
 
         git clone --recursive https://github.com/gw826943555/openwrt-packages-misc ./package/misc
         ./scripts/feeds update -a
@@ -54,16 +54,16 @@ jobs:
 
     - name: Download package source code
       run: |
-        cd openwrt
+        cd /mnt/openwrt
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        df -lh
-        du -h --max-depth=1
 
     - name: Post Build
       run: |
-        cd openwrt
+        cd /mnt/openwrt
+        df -lh
+        du -h --max-depth=2
         rm -f .config
         touch .config
         cat >> .config <<EOF
@@ -76,28 +76,30 @@ jobs:
         du -h --max-depth=1
         rm -rf ./build_dir/toolchain-*
         df -lh
-        du -h --max-depth=1
+        du -h --max-depth=2
 
     - name: Build CM520
       run: |
         bash ./mkconfig.sh cm520
-        cd openwrt
+        cd /mnt/openwrt
+        df -lh
+        du -h --max-depth=2
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-        df -lh
-        du -h --max-depth=1
 
     - name: Build R619AC
       run: |
         bash ./mkconfig.sh
-        cd openwrt
+        cd /mnt/openwrt
+        df -lh
+        du -h --max-depth=2
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
         df -lh
-        du -h --max-depth=1
+        du -h --max-depth=2
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/bin/targets
+        path: /mnt/openwrt/bin/targets

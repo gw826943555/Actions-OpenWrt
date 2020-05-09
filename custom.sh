@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./openwrt
+cd /mnt/openwrt
 
 sed -i "s/timezone='UTC'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
 sed -i "/timezone/a\\\t\tset system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
