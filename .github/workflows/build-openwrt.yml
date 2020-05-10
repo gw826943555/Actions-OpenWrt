@@ -100,7 +100,7 @@ jobs:
         make -j$(nproc) V=s
         df -lh
         du -h --max-depth=2
-        du -h --max_depth=1 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
+        du -h --max-depth=1 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
