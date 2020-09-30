@@ -9,7 +9,7 @@ if [ "$1" = "cm520" ];then
     sed -i 's/192.168.1.1/192.168.111.1/g' ./package/base-files/files/bin/config_generate
 else 
     echo "CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y" >> .config
-    sed -i 's/192.168.123.1/192.168.1.1/g' ./package/base-files/files/bin/config_generate
+    sed -i 's/192.168.111.1/192.168.1.1/g' ./package/base-files/files/bin/config_generate
 fi
 
 cat >> .config <<EOF
@@ -36,7 +36,7 @@ CONFIG_PACKAGE_luci-app-adblock=y
 CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
-CONFIG_PACKAGE_luci-app-netdata=y
+CONFIG_PACKAGE_luci-app-netdata=n
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
 CONFIG_PACKAGE_luci-app-ssr-plus=y
