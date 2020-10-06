@@ -39,6 +39,7 @@ CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-netdata=n
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
+CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
