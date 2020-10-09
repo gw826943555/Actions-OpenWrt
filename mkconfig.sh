@@ -66,8 +66,8 @@ CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_bind-dig=y
-CONFIG_PACKAGE_shadowsocksr-libev-config=y
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir=y
+CONFIG_PACKAGE_shadowsocksr-config=y
+CONFIG_PACKAGE_shadowsocksr-redir=y
 CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
 EOF
