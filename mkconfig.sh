@@ -69,6 +69,7 @@ CONFIG_PACKAGE_bind-dig=y
 CONFIG_PACKAGE_shadowsocksr-config=y
 CONFIG_PACKAGE_shadowsocksr-redir-mbedtls=y
 CONFIG_PACKAGE_shadowsocksr-rules=y
+CONFIG_PACKAGE_shadowsocksr-utils=y
 CONFIG_PACKAGE_luci-app-ssr-lite=y
 CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
