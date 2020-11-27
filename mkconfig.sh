@@ -73,6 +73,7 @@ CONFIG_PACKAGE_shadowsocksr-utils=y
 CONFIG_PACKAGE_luci-app-ssr-lite=y
 CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
+CONFIG_PACKAGE_wpa-supplicant=y
 EOF
 
 make defconfig
