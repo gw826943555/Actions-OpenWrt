@@ -4,17 +4,10 @@ cd /mnt/openwrt
 rm -f .config*
 touch .config
 
-if [ "$1" = "cm520" ];then
-    echo "CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y" >> .config
-    sed -i 's/192.168.1.1/192.168.111.1/g' ./package/base-files/files/bin/config_generate
-else 
-    echo "CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y" >> .config
-    sed -i 's/192.168.111.1/192.168.1.1/g' ./package/base-files/files/bin/config_generate
-fi
-
 cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_generic=y
+CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
 cat >> .config <<EOF

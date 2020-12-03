@@ -12,9 +12,9 @@ on:
     types: [published]
   push:
     branches: 
-      - master
+      - cm520
   schedule:
-    - cron: 0 0 1 * *
+    - cron: 0 3 1 * *
   watch:
     types: [started]
 
@@ -60,39 +60,8 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Post Build
-      run: |
-        cd /mnt/openwrt
-        df -lh
-        du -h --max-depth=2
-        rm -f .config
-        touch .config
-        cat >> .config <<EOF
-        CONFIG_TARGET_ipq40xx=y
-        CONFIG_TARGET_ipq40xx_generic=y
-        CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
-        EOF
-        make defconfig
-        make -j$(nproc) V=s
-        df -lh
-        du -h --max-depth=1
-        rm -rf ./build_dir/toolchain-*
-        rm -rf ./build_dir/host
-        df -lh
-        du -h --max-depth=2
-
     - name: Build CM520
       run: |
-        bash ./mkconfig.sh cm520
-        cd /mnt/openwrt
-        df -lh
-        du -h --max-depth=2
-        echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
-
-    - name: Build R619AC
-      run: |
-        bash ./mkconfig.sh
         cd /mnt/openwrt
         df -lh
         du -h --max-depth=2
