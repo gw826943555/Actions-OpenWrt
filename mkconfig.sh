@@ -13,6 +13,7 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_blockd=y
+CONFIG_PACKAGE_blkid=y
 CONFIG_PACKAGE_kmod-fs-vfat=y
 CONFIG_PACKAGE_kmod-fs-ext4=y
 CONFIG_PACKAGE_kmod-fs-exfat=y
