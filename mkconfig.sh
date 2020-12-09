@@ -53,8 +53,6 @@ CONFIG_ARIA2_COOKIE=y
 CONFIG_ARIA2_WEBSOCKET=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_wget=y
-CONFIG_PACKAGE_hostapd=y
-CONFIG_PACKAGE_wget=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_openssh-sftp-server=y
@@ -67,7 +65,8 @@ CONFIG_PACKAGE_shadowsocksr-utils=y
 CONFIG_PACKAGE_luci-app-ssr-lite=y
 CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
-CONFIG_PACKAGE_wpa-supplicant=y
+CONFIG_PACKAGE_wpad=y
+CONFIG_PACKAGE_wpad-basic=n
 EOF
 
 make defconfig
