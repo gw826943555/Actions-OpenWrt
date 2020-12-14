@@ -11,7 +11,6 @@ CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
 cat >> .config <<EOF
-CONFIG_DEFAULT_TARGET_OPTIMIZATION="-O3"
 CONFIG_DEFAULT_ath10k-firmware-qca4019-ct-full-htt=y
 
 CONFIG_PACKAGE_block-mount=y
