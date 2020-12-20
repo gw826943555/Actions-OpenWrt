@@ -10,11 +10,11 @@ CONFIG_TARGET_ipq40xx_generic=y
 CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
-cat >> .config <<EOF
-CONFIG_LIBC_USE_GLIBC=y
-CONFIG_USE_GLIBC=y
-CONFIG_LIBC="glibc"
-EOF
+#cat >> .config <<EOF
+#CONFIG_LIBC_USE_GLIBC=y
+#CONFIG_USE_GLIBC=y
+#CONFIG_LIBC="glibc"
+#EOF
 
 cat >> .config <<EOF
 CONFIG_DEFAULT_ath10k-firmware-qca4019-ct-full-htt=n
