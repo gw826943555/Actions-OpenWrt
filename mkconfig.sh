@@ -11,6 +11,12 @@ CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
 cat >> .config <<EOF
+CONFIG_LIBC_USE_GLIBC=y
+CONFIG_USE_GLIBC=y
+CONFIG_LIBC="glibc"
+EOF
+
+cat >> .config <<EOF
 CONFIG_DEFAULT_ath10k-firmware-qca4019-ct-full-htt=n
 
 CONFIG_PACKAGE_block-mount=y
@@ -33,6 +39,7 @@ CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
 CONFIG_PACKAGE_luci-app-dawn=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
+CONFIG_PACKAGE_luci-app-logview=y
 CONFIG_PACKAGE_luci-app-netdata=n
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
