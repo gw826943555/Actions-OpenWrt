@@ -10,18 +10,18 @@ CONFIG_TARGET_ipq40xx_generic=y
 CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
-#cat >> .config <<EOF
-#CONFIG_DEVEL=y
-#CONFIG_NEED_TOOLCHAIN=y
-#CONFIG_TOOLCHAINOPTS=y
-#CONFIG_BINUTILS_USE_VERSION_2_34=y
-#CONFIG_GCC_USE_VERSION_8=y
-#CONFIG_LIBC_USE_GLIBC=y
-#CONFIG_USE_GLIBC=y
-#CONFIG_LIBC="glibc"
-#CONFIG_TARGET_SUFFIX="gnueabi"
-#CONFIG_PACKAGE_ldd=y
-#EOF
+cat >> .config <<EOF
+CONFIG_DEVEL=y
+CONFIG_NEED_TOOLCHAIN=y
+CONFIG_TOOLCHAINOPTS=y
+CONFIG_BINUTILS_USE_VERSION_2_34=y
+CONFIG_GCC_USE_VERSION_8=y
+CONFIG_LIBC_USE_GLIBC=y
+CONFIG_USE_GLIBC=y
+CONFIG_LIBC="glibc"
+CONFIG_TARGET_SUFFIX="gnueabi"
+CONFIG_PACKAGE_ldd=y
+EOF
 
 cat >> .config <<EOF
 CONFIG_DEFAULT_ath10k-firmware-qca4019-ct-full-htt=n
@@ -83,6 +83,31 @@ CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
 CONFIG_PACKAGE_wpad=y
 CONFIG_PACKAGE_wpad-basic=n
+EOF
+
+#
+# Filesystem
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_exfat-fsck=y
+CONFIG_PACKAGE_exfat-mkfs=y
+EOF
+
+#
+# Utilities
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_lsof=y
+EOF
+
+#
+# Network Support
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-sched=y
+CONFIG_PACKAGE_kmod-sched-core=y
+CONFIG_PACKAGE_kmod-tcp-bbr=y
+CONFIG_PACKAGE_kmod-tcp-hybla=y
 EOF
 
 #
