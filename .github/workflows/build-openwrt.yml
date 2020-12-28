@@ -75,4 +75,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: /mnt/openwrt/bin/targets
+        path: /mnt/openwrt/bin/targets/ipq40xx/generic/*sysupgrade.bin
