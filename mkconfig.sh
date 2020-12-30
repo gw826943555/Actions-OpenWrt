@@ -75,7 +75,7 @@ CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_bind-dig=y
 CONFIG_PACKAGE_shadowsocksr-config=y
-CONFIG_PACKAGE_shadowsocksr-redir-mbedtls=y
+CONFIG_PACKAGE_shadowsocksr-redir=y
 CONFIG_PACKAGE_shadowsocksr-rules=y
 CONFIG_PACKAGE_shadowsocksr-utils=y
 CONFIG_PACKAGE_luci-app-ssr-lite=y
@@ -83,6 +83,31 @@ CONFIG_PACKAGE_transmission-daemon-openssl=y
 CONFIG_PACKAGE_transmission-web-control=y
 CONFIG_PACKAGE_wpad=y
 CONFIG_PACKAGE_wpad-basic=n
+EOF
+
+#
+# Filesystem
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_exfat-fsck=y
+CONFIG_PACKAGE_exfat-mkfs=y
+EOF
+
+#
+# Utilities
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_lsof=y
+EOF
+
+#
+# Network Support
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-sched=y
+CONFIG_PACKAGE_kmod-sched-core=y
+CONFIG_PACKAGE_kmod-tcp-bbr=y
+CONFIG_PACKAGE_kmod-tcp-hybla=y
 EOF
 
 #
