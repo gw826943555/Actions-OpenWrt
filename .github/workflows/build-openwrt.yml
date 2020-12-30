@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - r619ac
+      - dir878
   schedule:
     - cron: 0 3 1 * *
   watch:
@@ -62,7 +62,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build R619AC
+    - name: Build DIR878
       run: |
         cd /mnt/openwrt
         df -lh
@@ -77,4 +77,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: /mnt/openwrt/bin/targets/ipq40xx/generic/*sysupgrade.bin
+        path: /mnt/openwrt/bin/targets/*
