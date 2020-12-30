@@ -16,6 +16,3 @@ sed -i 's/radio${devidx}.disabled=1/radio${devidx}.disabled=0/g' ./package/kerne
 sed -i '/^config defaults/a \\toption flow_offloading\t1' ./package/network/config/firewall/files/firewall.config
 # 修改默认IP地址
 sed -i 's/192.168.1.1/192.168.111.1/g' ./package/base-files/files/bin/config_generate
-
-# 添加feeds
-echo 'src-git misc https://github.com/gw826943555/openwrt-packages-misc' >> ./feeds.conf.default

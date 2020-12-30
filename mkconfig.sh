@@ -7,7 +7,7 @@ touch .config
 cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_generic=y
-CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
+CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
 EOF
 
 #cat >> .config <<EOF
@@ -24,8 +24,6 @@ EOF
 #EOF
 
 cat >> .config <<EOF
-CONFIG_DEFAULT_ath10k-firmware-qca4019-ct-full-htt=n
-
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_blockd=y
 CONFIG_PACKAGE_blkid=y
