@@ -109,4 +109,22 @@ CONFIG_PACKAGE_kmod-crypto-user=y
 CONFIG_PACKAGE_kmod-cryptodev=y
 EOF
 
+#
+# Extra packages
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-xray=y
+
+#
+# Xray Configuration
+#
+# CONFIG_PACKAGE_XRAY_FETCH_VIA_PROXYCHAINS is not set
+CONFIG_PACKAGE_XRAY_INCLUDE_XRAY=y
+CONFIG_PACKAGE_XRAY_INCLUDE_GEOIP=y
+CONFIG_PACKAGE_XRAY_INCLUDE_GEOSITE=y
+CONFIG_PACKAGE_XRAY_INCLUDE_CLOUDFLARE_ORIGIN_ROOT_CA=y
+# end of Xray Configuration
+
+EOF
+
 make defconfig
