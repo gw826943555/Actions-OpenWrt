@@ -43,7 +43,7 @@ jobs:
         ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
 
         # 添加feeds
-        git clone git clone --recurse-submodules https://github.com/gw826943555/openwrt-packages-misc package/misc
+        git clone --recurse-submodules https://github.com/gw826943555/openwrt-packages-misc package/misc
         
         ./scripts/feeds update -a
         ./scripts/feeds install -a
