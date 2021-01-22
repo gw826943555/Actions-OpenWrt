@@ -43,9 +43,6 @@ jobs:
 
         sudo mkdir -p -m 777 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
         ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
-
-        # 添加feeds
-        echo 'src-git misc https://github.com/gw826943555/openwrt-packages-misc' >> ./feeds.conf.default
         
         ./scripts/feeds update -a
         ./scripts/feeds install -a
