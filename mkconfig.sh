@@ -8,8 +8,6 @@ cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_generic=y
 CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
-
-CONFIG_PACKAGE_ipq-wifi-p2w_r619ac=y
 EOF
 
 #cat >> .config <<EOF
@@ -49,7 +47,6 @@ CONFIG_PACKAGE_luci-app-logview=y
 CONFIG_PACKAGE_luci-app-netdata=n
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
-CONFIG_PACKAGE_luci-app-shadowsocks-libev=n
 CONFIG_PACKAGE_luci-app-transmission=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
@@ -102,12 +99,12 @@ EOF
 #
 # Network Support
 #
-cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-sched=y
-CONFIG_PACKAGE_kmod-sched-core=y
-CONFIG_PACKAGE_kmod-tcp-bbr=y
-CONFIG_PACKAGE_kmod-tcp-hybla=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_kmod-sched=y
+#CONFIG_PACKAGE_kmod-sched-core=y
+#CONFIG_PACKAGE_kmod-tcp-bbr=y
+#CONFIG_PACKAGE_kmod-tcp-hybla=y
+#EOF
 
 #
 # Cryptographic API modules
@@ -136,19 +133,8 @@ EOF
 #
 # Extra packages
 #
-#cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-xray=y
-#
-#
-# Xray Configuration
-#
-# CONFIG_PACKAGE_XRAY_FETCH_VIA_PROXYCHAINS is not set
-#CONFIG_PACKAGE_XRAY_INCLUDE_XRAY=y
-#CONFIG_PACKAGE_XRAY_INCLUDE_GEOIP=y
-#CONFIG_PACKAGE_XRAY_INCLUDE_GEOSITE=y
-#CONFIG_PACKAGE_XRAY_INCLUDE_CLOUDFLARE_ORIGIN_ROOT_CA=y
-# end of Xray Configuration
-
-#EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_xray-core=y
+EOF
 
 make defconfig
