@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - test
+      - rpi4
   watch:
     types: [started]
 
@@ -60,7 +60,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build CM520
+    - name: Build RPI4
       run: |
         cd /mnt/openwrt
         df -lh
@@ -75,4 +75,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: /mnt/openwrt/bin/targets/ipq40xx/generic/*sysupgrade.bin
+        path: /mnt/openwrt/bin/targets/bcm27xx/bcm2711/openwrt-bcm27xx-bcm2711-rpi-4-squashfs*
