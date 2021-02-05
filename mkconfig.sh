@@ -29,10 +29,16 @@ CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_luci=y
 CONFIG_LUCI_LANG_en=y
 CONFIG_LUCI_LANG_zh_Hans=y
-CONFIG_PACKAGE_luci-app-dawn=y
 CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-mod-dashboard=y
-CONFIG_PACKAGE_wpa-supplicant=y
+CONFIG_PACKAGE_luci-app-dawn=y
+CONFIG_PACKAGE_nano=y
+CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_htop=y
+CONFIG_PACKAGE_vim-fuller=y
+CONFIG_PACKAGE_iperf3=y
+CONFIG_PACKAGE_bind-dig=y
+CONFIG_PACKAGE_wpad=y
+CONFIG_PACKAGE_wpad-basic=n
 EOF
 
 make defconfig
