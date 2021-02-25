@@ -45,6 +45,7 @@ CONFIG_PACKAGE_luci-app-dawn=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-logview=y
 CONFIG_PACKAGE_luci-app-netdata=n
+CONFIG_PACKAGE_luci-app-nft-qos=y
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
 CONFIG_PACKAGE_luci-app-transmission=y
