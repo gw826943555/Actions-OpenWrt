@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - r619ac
+      - cm520
   schedule:
     - cron: 0 3 1 * *
   watch:
@@ -62,7 +62,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build R619AC
+    - name: Build OpenWrt
       run: |
         cd /mnt/openwrt
         df -lh
