@@ -7,7 +7,7 @@ touch .config
 cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_generic=y
-CONFIG_TARGET_ipq40xx_generic_DEVICE_p2w_r619ac-128m=y
+CONFIG_TARGET_ipq40xx_generic_DEVICE_mobipromo_cm520-79f=y
 EOF
 
 #cat >> .config <<EOF
@@ -46,7 +46,7 @@ CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-logview=y
 CONFIG_PACKAGE_luci-app-netdata=n
 CONFIG_PACKAGE_luci-app-nft-qos=y
-CONFIG_PACKAGE_luci-app-openclash=n
+CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
 CONFIG_PACKAGE_luci-app-transmission=y
