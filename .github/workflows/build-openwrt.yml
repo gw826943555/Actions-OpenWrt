@@ -33,7 +33,6 @@ jobs:
         sudo apt-get -y autoremove --purge
         sudo apt-get clean
 
-        df -h
     - name: Clone source code
       run: |
         sudo chmod 777 /mnt
@@ -65,13 +64,8 @@ jobs:
     - name: Build OpenWrt
       run: |
         cd /mnt/openwrt
-        df -lh
-        du -h --max-depth=2
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-        df -lh
-        du -h --max-depth=2
-        du -h --max-depth=1 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
