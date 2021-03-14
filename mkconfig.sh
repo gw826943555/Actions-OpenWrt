@@ -43,12 +43,12 @@ CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
 CONFIG_PACKAGE_luci-app-dawn=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
-CONFIG_PACKAGE_luci-app-ksmbd=y
+CONFIG_PACKAGE_luci-app-ksmbd=n
 CONFIG_PACKAGE_luci-app-logview=y
 CONFIG_PACKAGE_luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-nft-qos=n
 CONFIG_PACKAGE_luci-app-openclash=n
-CONFIG_PACKAGE_luci-app-samba4=n
+CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_libpam=y
 CONFIG_PACKAGE_luci-app-transmission=y
 CONFIG_PACKAGE_luci-app-ttyd=y
@@ -58,7 +58,7 @@ CONFIG_PACKAGE_luci-app-vlmcsd=y
 CONFIG_PACKAGE_luci-app-vsftpd=y
 CONFIG_PACKAGE_luci-app-wifischedule=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=n
-CONFIG_PACKAGE_luci-mod-dashboard=y
+CONFIG_PACKAGE_luci-mod-dashboard=n
 CONFIG_PACKAGE_aria2=y
 CONFIG_ARIA2_NOXML=y
 CONFIG_ARIA2_BITTORRENT=y
@@ -131,6 +131,14 @@ CONFIG_PACKAGE_kmod-crypto-pcompress=y
 CONFIG_PACKAGE_kmod-crypto-sha1=y
 CONFIG_PACKAGE_kmod-crypto-user=y
 CONFIG_PACKAGE_kmod-cryptodev=y
+EOF
+
+#
+# Python
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_python3=y
+CONFIG_PACKAGE_python3-pip=y
 EOF
 
 #
