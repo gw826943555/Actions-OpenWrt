@@ -12,9 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - dir878
-  schedule:
-    - cron: 0 3 1 * *
+      - miwifi-mini
   watch:
     types: [started]
 
@@ -59,16 +57,11 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build DIR878
+    - name: Build OpenWrt
       run: |
         cd /mnt/openwrt
-        df -lh
-        du -h --max-depth=2
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-        df -lh
-        du -h --max-depth=2
-        du -h --max-depth=1 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
