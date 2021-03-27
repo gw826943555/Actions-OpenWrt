@@ -51,12 +51,13 @@ CONFIG_PACKAGE_luci-app-openclash=n
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-transmission=y
 CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_luci-app-vlmcsd=y
 CONFIG_PACKAGE_luci-app-vsftpd=y
 CONFIG_PACKAGE_luci-app-wifischedule=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
+CONFIG_PACKAGE_luci-app-xray=y
 CONFIG_PACKAGE_luci-mod-dashboard=n
 CONFIG_PACKAGE_aria2=y
 CONFIG_ARIA2_NOXML=y
@@ -145,6 +146,7 @@ EOF
 #
 cat >> .config <<EOF
 CONFIG_PACKAGE_xray-core=y
+CONFIG_PACKAGE_xray-geodata=y
 EOF
 
 make defconfig
