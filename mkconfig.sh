@@ -87,7 +87,7 @@ CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
 CONFIG_PACKAGE_wpad=y
 CONFIG_PACKAGE_wpad-basic=n
-CONFIG_PACKAGE_zram-swap=y
+CONFIG_PACKAGE_zram-swap=n
 EOF
 
 #
