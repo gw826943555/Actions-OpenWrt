@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - k2
+      - newifi-d2
   workflow_dispatch:    # run manually
   watch:
     types: [started]
