@@ -32,7 +32,6 @@ jobs:
         sudo apt-get -y autoremove --purge
         sudo apt-get clean
 
-        df -h
     - name: Clone source code
       run: |
         sudo chmod 777 /mnt
@@ -42,6 +41,9 @@ jobs:
 
         sudo mkdir -p -m 777 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
         ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
+
+        # 添加feeds
+        git clone --recurse-submodules https://github.com/gw826943555/openwrt-packages-misc package/misc
         
         ./scripts/feeds update -a
         ./scripts/feeds install -a
@@ -60,6 +62,7 @@ jobs:
 
     - name: Build OpenWrt
       run: |
+        cd /mnt/openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
