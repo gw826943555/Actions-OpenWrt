@@ -32,14 +32,12 @@ jobs:
         sudo apt-get -y autoremove --purge
         sudo apt-get clean
 
-        df -h
     - name: Clone source code
       run: |
         sudo chmod 777 /mnt
         cd /mnt
         git clone -b master https://github.com/gw826943555/openwrt openwrt
         cd /mnt/openwrt
-
         sudo mkdir -p -m 777 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
         ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
         
@@ -58,8 +56,9 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build OpenWrt
+    - name: Build DIR878
       run: |
+        cd /mnt/openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
