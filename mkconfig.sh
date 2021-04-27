@@ -7,7 +7,7 @@ touch .config
 cat >> .config <<EOF
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
-CONFIG_TARGET_ramips_mt7621_DEVICE_dlink_dir-878-a1=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_dlink_dir-878-a2=y
 EOF
 
 #cat >> .config <<EOF
