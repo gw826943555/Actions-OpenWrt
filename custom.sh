@@ -15,4 +15,4 @@ sed -i 's/radio${devidx}.disabled=1/radio${devidx}.disabled=0/g' ./package/kerne
 # 开启software flow offloading
 sed -i '/^config defaults/a \\toption flow_offloading\t1' ./package/network/config/firewall/files/firewall.config
 # 修改默认IP地址
-#sed -i 's/192.168.1.1/192.168.11.1/g' ./package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.11.1/g' ./package/base-files/files/bin/config_generate
