@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - treebear
+      - lede_treebear
   workflow_dispatch:    # run manually
   watch:
     types: [started]
@@ -36,15 +36,12 @@ jobs:
       run: |
         sudo chmod 777 /mnt
         cd /mnt
-        git clone -b master https://github.com/gw826943555/openwrt openwrt
+        git clone -b master https://github.com/gw826943555/lede openwrt
         cd /mnt/openwrt
 
         sudo mkdir -p -m 777 /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir
         ln -s /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/build_dir ./build_dir
 
-        # 添加feeds
-        git clone --recurse-submodules https://github.com/gw826943555/openwrt-packages-misc package/misc
-        
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
