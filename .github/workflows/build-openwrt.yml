@@ -47,7 +47,6 @@ jobs:
 
     - name: Custom config file
       run: |
-        bash ./custom.sh
         bash ./mkconfig.sh
 
     - name: Download package source code
