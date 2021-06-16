@@ -147,10 +147,10 @@ EOF
 #
 # Python
 #
-cat >> .config <<EOF
-CONFIG_PACKAGE_python3=y
-CONFIG_PACKAGE_python3-pip=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_python3=y
+#CONFIG_PACKAGE_python3-pip=y
+#EOF
 
 #
 # Extra packages
