@@ -12,7 +12,7 @@ on:
     types: [published]
   push:
     branches: 
-      - newifi-d2
+      - cr660x
   workflow_dispatch:    # run manually
   watch:
     types: [started]
